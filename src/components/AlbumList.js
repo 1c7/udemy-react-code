@@ -1,15 +1,24 @@
 import React, { Component } from 'react'
 import {Text,View} from 'react-native'
-import axios from axios
-
+import AlbumDetail from './AlbumDetail'
 
 class AlbumList extends Component{
-  componentWillMount(){
-    
+  componentWillMount() {
+    // fetch("https://jsonplaceholder.typicode.com/photos")
+    //   .then((response) => response.json())
+    //   .then((responseData) => {
+    //     console.log(responseData);
+    //   })
+    //   .done();
+  }
+  renderAlbum(){
+    return this.state.albums.map(album => <Text>{album.text}</Text>)
   }
   render() {
     return(
-      <Text>321323</Text>
+      <View>
+        {this.renderAlbum}
+      </View>
     )
   }
 };
